@@ -249,10 +249,9 @@ elif page == "Teacher":
         fig_bar.update_layout(template="plotly_dark", showlegend=False)
         st.plotly_chart(fig_bar, use_container_width=True)
 
-    st.dataframe(
-        teacher_summary.style.background_gradient(cmap="Blues"),
-       
-    )
+    styled_df = teacher_summary.style.background_gradient(cmap="Blues")
+    st.write(styled_df.to_html(),
+             unsafe_allow_html=True)
 
 # ======================================================
 # LATE COUNT & ATTRITION PAGE
@@ -285,3 +284,4 @@ elif page == "Late Count & Attrition":
         fig_attrition.update_layout(template="plotly_dark")
 
         st.plotly_chart(fig_attrition, use_container_width=True)
+
