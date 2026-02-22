@@ -251,7 +251,7 @@ elif page == "Teacher":
 
     st.dataframe(
         teacher_summary.style.background_gradient(cmap="Blues"),
-        use_container_width=True
+       
     )
 
 # ======================================================
@@ -283,4 +283,5 @@ elif page == "Late Count & Attrition":
             hole=0.6
         )
         fig_attrition.update_layout(template="plotly_dark")
+
         st.plotly_chart(fig_attrition, use_container_width=True)
